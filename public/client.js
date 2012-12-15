@@ -29,6 +29,23 @@ jQuery(function ($) {
     f.div({ id: 'main'}) +
     f.div({ id: 'bottom'})
   );
+  
+//thumbnails
+var images = [
+"/image/xmas.jpeg","/image/xmas1.jpeg","/image/xmas2.jpeg","/image/xmas3.jpeg","/image/xmas4.jpeg"];
+
+function loadThumbs () {
+	for(var i = 0 ; i < images.length; i++){
+		$('#thumbnail').append('<img src="'+images[i]+'">');
+	}
+}
+
+loadThumbs();
+
+
+
+
+
 
   video = $('#myVideo');
 
