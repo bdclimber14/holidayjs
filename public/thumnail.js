@@ -10,3 +10,5 @@ function loadThumbs (images) {
 		$('#thumbnails').addClass(thumbnails).add(images);
 	}
 }
+
+loadThumbs(images);
