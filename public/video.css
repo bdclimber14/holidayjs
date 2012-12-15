@@ -2,3 +2,10 @@
 	width: 500px;
 	height: 500px;
 }
+
+#card {
+	display: none;
+}
+#bottom  {
+	display: none;
+}

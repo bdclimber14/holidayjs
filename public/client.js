@@ -44,6 +44,13 @@ jQuery(function ($) {
   $('#capture').on('click', function (e) {
     generateCard();
   });
+
+  $(document).on('click', '#redo', function() {
+  	redo();
+  });
+  $(document).on('click', '#save', function() {
+  	save();
+  });
 });
 
 
@@ -75,20 +82,29 @@ var generateCard = function() {
 	context.drawImage(video, 0,  0);
 
 	var cardData = canvas.toDataURL();
-	$('#card').html('<img src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
-
-
-
-
-
-	var img = document.getElementById('save');
-
-	img.src = imgData;
+	$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
+	$('#card').append('<button id="redo">Redo</button><button id="save">Save</button>');
+  	
 	// Add theme to the temp canvas
 	// Add photo to temp canvas
 
 	// Capture temp canvas in data stream and add to new canvas
 	// Replace live preview with new image... hide video?
 
+	$('#main').hide();
+	$('#card').show();
 
+
+}
+
+var save = function() {
+	// upload
+	$.post('/upload', {
+		file: $('#card-data').attr('src')
+	});
+	redo();
+};
+var redo = function() {
+	$('#card').hide().empty();
+	$('#main').show();
 }
