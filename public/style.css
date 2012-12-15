@@ -1,0 +1,10 @@
+.thumbnails {
+	display:inline-block;
+	height:100;
+	width:100;
+}
+#wrapper {
+	background-color:#92EC00;
+	width:80%;
+	height:100%;
+}
