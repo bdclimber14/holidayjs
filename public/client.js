@@ -25,6 +25,7 @@ jQuery(function ($) {
     f.div({ id: 'wrapper'}) +
     f.div({ id: 'thumbnail'}) +
     f.div({ id: 'message'}) +
+    f.div({ id: 'card'}) +
     f.div({ id: 'main'}) +
     f.div({ id: 'bottom'})
   );
@@ -73,7 +74,16 @@ var generateCard = function() {
 
 	context.drawImage(video, 0,  0);
 
+	var cardData = canvas.toDataURL();
+	$('#card').html('<img src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
 
+
+
+
+
+	var img = document.getElementById('save');
+
+	img.src = imgData;
 	// Add theme to the temp canvas
 	// Add photo to temp canvas
 
