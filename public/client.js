@@ -93,14 +93,14 @@ var generateCard = function() {
 
 	$('#main').hide();
 	$('#card').show();
-
-
 }
 
 var save = function() {
 	// upload
 	$.post('/upload', {
 		file: $('#card-data').attr('src')
+	}).success(function(data) {
+		window.open('/display');
 	});
 	redo();
 };
