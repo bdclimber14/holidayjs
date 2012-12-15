@@ -1,4 +1,3 @@
-
 var script = document.createElement('script');
 script.src = 'http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js';
 script.type = 'text/javascript';
@@ -8,6 +7,6 @@ var images = [
 
 function loadThumbs (images) {
 	for(var i = 0 ; images.length(); i++){
-		$('#thumbnails').add(images);
+		$('#thumbnails').addClass(thumbnails).add(images);
 	}
 }
