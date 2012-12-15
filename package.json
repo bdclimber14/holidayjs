@@ -1,0 +1,12 @@
+{ "name": "hjs-cards"
+, "version": "0.0.2"
+, "main": "server.js"
+, "scripts": { "test": "for f in ./t/*.js; do node $f; done" }
+, "dependencies": { "ecstatic": "*" }
+, "devDependencies": { "tape": "*" }
+, "engines": { "node": ">0.6" }
+, "repository":
+  { "type": "git"
+  , "url": "git://github.com/bdclimber14/holidayjs.git"
+  }
+}
