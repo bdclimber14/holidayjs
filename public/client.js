@@ -61,7 +61,7 @@ var generateCard = function() {
   	$('#bottom').html('<canvas id="canvas" height="' + $('#background').height() + '" width="' + $('#background').width() + '"></canvas>');
   	
 	// Create temporary canvas where both video and theme will go in
-  	var canvas = $('#canvas');
+  	var canvas = $('#canvas')[0];
   	var context = canvas.getContext('2d');
 
 	// Get the snapshot image from video
@@ -71,7 +71,7 @@ var generateCard = function() {
 	};
 	img.src = currentThemeSrc;
 
-	context.drawImage(video, photoLeft, photoRight);
+	context.drawImage(video, 0,  0);
 
 
 	// Add theme to the temp canvas
