@@ -2,7 +2,10 @@
 , "version": "0.0.2"
 , "main": "server.js"
 , "scripts": { "test": "for f in ./t/*.js; do node $f; done" }
-, "dependencies": { "ecstatic": "*" }
+, "dependencies":
+  { "ecstatic": "*"
+  , "flates": "*"
+  }
 , "devDependencies": { "tape": "*" }
 , "engines": { "node": ">0.6" }
 , "repository":
