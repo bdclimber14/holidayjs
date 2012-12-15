@@ -25,6 +25,7 @@ jQuery(function ($) {
     f.div({ id: 'wrapper'}) +
     f.div({ id: 'thumbnail'}) +
     f.div({ id: 'message'}) +
+    f.div({ id: 'card'}) +
     f.div({ id: 'main'}) +
     f.div({ id: 'bottom'})
   );
@@ -42,6 +43,13 @@ jQuery(function ($) {
 
   $('#capture').on('click', function (e) {
     generateCard();
+  });
+
+  $(document).on('click', '#redo', function() {
+  	redo();
+  });
+  $(document).on('click', '#save', function() {
+  	save();
   });
 });
 
@@ -61,7 +69,7 @@ var generateCard = function() {
   	$('#bottom').html('<canvas id="canvas" height="' + $('#background').height() + '" width="' + $('#background').width() + '"></canvas>');
   	
 	// Create temporary canvas where both video and theme will go in
-  	var canvas = $('#canvas');
+  	var canvas = $('#canvas')[0];
   	var context = canvas.getContext('2d');
 
 	// Get the snapshot image from video
@@ -71,14 +79,32 @@ var generateCard = function() {
 	};
 	img.src = currentThemeSrc;
 
-	context.drawImage(video, photoLeft, photoRight);
+	context.drawImage(video, 0,  0);
 
-
+	var cardData = canvas.toDataURL();
+	$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
+	$('#card').append('<button id="redo">Redo</button><button id="save">Save</button>');
+  	
 	// Add theme to the temp canvas
 	// Add photo to temp canvas
 
 	// Capture temp canvas in data stream and add to new canvas
 	// Replace live preview with new image... hide video?
 
+	$('#main').hide();
+	$('#card').show();
+}
 
+var save = function() {
+	// upload
+	$.post('/upload', {
+		file: $('#card-data').attr('src')
+	}).success(function(data) {
+		window.open('/display');
+	});
+	redo();
+};
+var redo = function() {
+	$('#card').hide().empty();
+	$('#main').show();
 }
