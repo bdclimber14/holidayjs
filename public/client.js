@@ -94,6 +94,8 @@ jQuery(function ($) {
     updateTheme($(e.currentTarget));
   });
 
+  updateTheme($($('#thumbnail img')[0]));
+
   $('#capture').on('click', function (e) {
     generateCard();
   });
@@ -132,7 +134,7 @@ var generateCard = function() {
 	};
 	img.src = currentThemeSrc;
 
-	context.drawImage(video, 0,  0);
+	context.drawImage(video, 0, 0);
 
 	var cardData = canvas.toDataURL();
 	$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
