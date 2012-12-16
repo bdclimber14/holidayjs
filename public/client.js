@@ -33,27 +33,27 @@ jQuery(function ($) {
 //thumbnails
 var images = [
   {
-    'src': "/image/xmas.jpg",
+    'src': "/image/xmas.png",
     'top': 25,
     'left': 208,
     'height': 100
   },  {
-    'src': "/image/xmas1.jpg",
+    'src': "/image/xmas1.png",
     'top': 1,
     'left': 200,
     'height': 100
   },  {
-    'src': "/image/xmas2.jpg",
+    'src': "/image/xmas2.png",
     'top': 31,
     'left': 116,
     'height': 150
   },  {
-    'src': "/image/xmas3.jpg",
+    'src': "/image/xmas3.png",
     'top': 0,
     'left': 155,
     'height': 140
   },  {
-    'src': "/image/xmas4.jpg",
+    'src': "/image/xmas4.png",
     'top': 160,
     'left': 225,
     'height': 120
