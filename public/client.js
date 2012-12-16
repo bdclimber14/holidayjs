@@ -33,7 +33,6 @@ jQuery(function ($) {
 //thumbnails
 var images = [
   {
-<<<<<<< HEAD
     'src': "/image/xmas.jpeg",
     'top': 25,
     'left': 208,
