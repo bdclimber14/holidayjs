@@ -136,7 +136,7 @@ var generateCard = function() {
 		console.log('load');
   		context.drawImage(img, 0, 0);
 
-		context.drawImage(video, photoLeft, photoTop, photoHeight, photoHeight);
+		context.drawImage(video, photoLeft, photoTop, photoHeight +20, photoHeight);
 		
 		context.font = "italic bold 25px Courier";
 		context.fillText($('#greeting').val(), 25, 400);
