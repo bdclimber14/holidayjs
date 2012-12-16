@@ -1,10 +1,21 @@
 #thumbnail img {
 	display:inline-block;
 	height:100px;
-	width:100px;
 }
 #wrapper {
 	background-color:#92EC00;
 	width:80%;
 	height:100%;
+}
+
+#main {
+    position: relative;
+}
+
+#myVideo {
+    position: absolute;
+    top: 30px;
+    left: 220px;
+    height: 100px;
+
 }
