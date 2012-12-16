@@ -4,6 +4,10 @@
 	z-index:1000;
 	position: absolute;
 }
+#capture {
+	position: absolute;
+	z-index: 2000;
+}
 
 #card {
 	display: none;
