@@ -117,7 +117,7 @@ var updateTheme = function($image) {
 	photoHeight = $image.data('height');
 
 	// reposition video of face
-	video.css({ left: photoLeft, top: photoTop, height: photoHeight });
+	$(video).css({ left: photoLeft, top: photoTop, height: photoHeight });
 }
 
 var generateCard = function() {
@@ -134,7 +134,7 @@ var generateCard = function() {
 	};
 	img.src = currentThemeSrc;
 
-	context.drawImage(video, 0, 0);
+	context.drawImage(video, photoLeft, photoRight, photoHeight, photoHeight);
 
 	var cardData = canvas.toDataURL();
 	$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
