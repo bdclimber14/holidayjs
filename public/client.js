@@ -134,7 +134,7 @@ var generateCard = function() {
 	};
 	img.src = currentThemeSrc;
 
-	context.drawImage(video, photoLeft, photoRight, photoHeight, photoHeight);
+	context.drawImage(video, photoLeft, photoTop, photoHeight, photoHeight);
 
 	var cardData = canvas.toDataURL();
 	$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
