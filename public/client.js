@@ -75,7 +75,10 @@ function loadThumbs () {
 
 loadThumbs();
 
-
+//message
+jQuery(function ($) {
+	$('#message').html('<textarea rows="2" cols="60"></textarea>');
+});
 
 
 
@@ -147,8 +150,10 @@ var generateCard = function() {
 
 var save = function() {
 	// upload
+  var imgData = $('#card-data').attr('src').replace(/^data:image\/png;base64,/, "")
+  console.log(imgData)
 	$.post('/upload', {
-		file: $('#card-data').attr('src').replace(/^data:image\/\w+;base64,/, "")
+		file: imgData
 	}).success(function(data) {
 		window.open('/display');
 	});
