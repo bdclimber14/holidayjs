@@ -86,7 +86,7 @@ jQuery(function ($) {
 
   video = $('#myVideo');
 
-  $('#main').append('<img id="background">').append('<div><button id="capture">Preview Card</button></div>').append('<video id="myVideo" autoplay></video>');
+  $('#main').append('<img id="background">').append('<div><button id="capture">Save Card</button></div>').append('<video id="myVideo" autoplay></video>');
 
 
   startCamera();
@@ -143,7 +143,7 @@ var generateCard = function() {
 
 		var cardData = canvas.toDataURL();
 		$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
-		$('#card').append('<div><button id="redo">Redo</button><button id="save">Save</button></div>');
+		$('#card').append('<div><button id="redo">Redo</button></div>');
 
 		$('#main').hide();
 		$('#card').show();
@@ -151,15 +151,6 @@ var generateCard = function() {
 };
 
 var save = function() {
-	// upload
-  var imgData = $('#card-data').attr('src').replace(/^data:image\/png;base64,/, "")
-  console.log(imgData)
-	$.post('/upload', {
-		file: imgData
-	}).success(function(data) {
-		window.open('/display');
-	});
-	redo();
 };
 var redo = function() {
 	$('#card').hide().empty();
