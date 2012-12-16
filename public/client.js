@@ -142,7 +142,7 @@ var generateCard = function() {
 
 		var cardData = canvas.toDataURL();
 		$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
-		$('#card').prepend('<div><button id="redo">Redo</button><button id="save">Save</button></div>');
+		$('#card').append('<div><button id="redo">Redo</button><button id="save">Save</button></div>');
 
 		$('#main').hide();
 		$('#card').show();
