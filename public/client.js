@@ -137,8 +137,9 @@ var generateCard = function() {
   		context.drawImage(img, 0, 0);
 
 		context.drawImage(video, photoLeft, photoTop, photoHeight, photoHeight);
-		context.fillText($('#greeting').val(), 25, 400);
 		
+		context.font = "italic bold 25px Courier";
+		context.fillText($('#greeting').val(), 25, 400);
 
 		var cardData = canvas.toDataURL();
 		$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
