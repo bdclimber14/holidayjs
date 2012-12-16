@@ -86,7 +86,7 @@ jQuery(function ($) {
 
   video = $('#myVideo');
 
-  $('#main').append('<div><button id="capture">Preview Card</button></div>').append('<img id="background">').append('<video id="myVideo" autoplay></video>');
+  $('#main').append('<img id="background">').append('<div><button id="capture">Preview Card</button></div>').append('<video id="myVideo" autoplay></video>');
 
 
   startCamera();
