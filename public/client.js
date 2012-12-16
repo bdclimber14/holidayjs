@@ -115,7 +115,7 @@ var generateCard = function() {
 var save = function() {
 	// upload
 	$.post('/upload', {
-		file: $('#card-data').attr('src')
+		file: $('#card-data').attr('src').replace(/^data:image\/\w+;base64,/, "")
 	}).success(function(data) {
 		window.open('/display');
 	});

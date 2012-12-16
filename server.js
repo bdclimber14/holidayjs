@@ -6,6 +6,7 @@ var http = require('http')
   , ramrod = require('ramrod')
   , filed = require('filed')
   , f = require('flates')
+  , u = 0
 
 var router = ramrod(
     { 'upload': upload
@@ -21,7 +22,7 @@ router.on('*', ecstatic(__dirname + '/public'))
 
 function upload (req, res) {
 
-  req.pipe(filed(path.join(__dirname, 'public' + 'upload', u++ + '.png'))
+  req.pipe(filed(path.join(__dirname, 'public', 'upload', u++ + '.png'))
   ).on('end', function () {
     res.statusCode = 200
     res.end('ok')
@@ -37,8 +38,14 @@ function display (req, res) {
     console.log(files)
     if (err) {
       res.statusCode = 500
-      res.end('Read Dir fialed')
+      res.end('Thanks, Grinch!')
     }
+    if (!Array.isArray(files)) {
+      res.statusCode = 200
+      res.end('Nothing uploaded!')
+      return
+    }
+
 
     res.statusCode = 200
 
