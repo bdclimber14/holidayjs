@@ -5,7 +5,7 @@ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
 window.URL = window.URL || window.webkitURL;
 
 var video;
-var photoLeft, photoRight, photoHeight = 0;
+var photoLeft, photoTop, photoHeight = 0;
 var currentThemeSrc = '';
 
 function startCamera() {
@@ -29,6 +29,23 @@ jQuery(function ($) {
     f.div({ id: 'main'}) +
     f.div({ id: 'bottom'})
   );
+  
+//thumbnails
+var images = [
+"/image/xmas.jpeg","/image/xmas1.jpeg","/image/xmas2.jpeg","/image/xmas3.jpeg","/image/xmas4.jpeg"];
+
+function loadThumbs () {
+	for(var i = 0 ; i < images.length; i++){
+		$('#thumbnail').append('<img src="'+images[i]+'">');
+	}
+}
+
+loadThumbs();
+
+
+
+
+
 
   video = $('#myVideo');
 
@@ -55,14 +72,14 @@ jQuery(function ($) {
 
 
 var updateTheme = function($image) {
-	currentThemeSrc = $image.src();
+	currentThemeSrc = $image.attr('src');
 	$('#background').attr('src', currentThemeSrc);
 	photoLeft = $image.data('left');
-	photoRight = $image.data('top');
+	photoTop = $image.data('top');
 	photoHeight = $image.data('height');
 
 	// reposition video of face
-	video.css({ left: photoX, top: photoY, height: photoHeight });
+	video.css({ left: photoLeft, top: photoTop, height: photoHeight });
 }
 
 var generateCard = function() {
