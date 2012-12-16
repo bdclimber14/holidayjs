@@ -2,12 +2,24 @@
 	display:inline-block;
 	height:100px;
 }
+#thumbnail { 
+	padding: 15px;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: sans-serif;
+	float: left;
+	clear: both;
+	background: #aa0000;
+}
 #wrapper {
 	background-color:#92EC00;
 	width:80%;
 	height:100%;
 }
-
+button {
+	font-size: 18px;
+}
 #main {
     position: relative;
 }

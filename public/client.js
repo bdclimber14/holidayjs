@@ -61,6 +61,7 @@ var images = [
   ];
 
 function loadThumbs () {
+	$('#thumbnail').append('<p>Pick a holiday theme</p>');
 	for(var i = 0 ; i < images.length; i++) {
 		var img = $('<img />', {
       'src': images[i].src,
@@ -77,7 +78,7 @@ loadThumbs();
 
 //message
 jQuery(function ($) {
-	$('#message').html('<textarea rows="2" cols="60" id="greeting"></textarea>');
+	$('#message').html('<textarea placeholder="Write a greeting..." rows="2" cols="60" id="greeting"></textarea>');
 });
 
 
@@ -85,7 +86,7 @@ jQuery(function ($) {
 
   video = $('#myVideo');
 
-  $('#main').append('<img id="background">').append('<video id="myVideo" autoplay></video>').append('<button id="capture">Capture</button>');
+  $('#main').append('<div><button id="capture">Preview Card</button></div>').append('<img id="background">').append('<video id="myVideo" autoplay></video>');
 
 
   startCamera();
