@@ -33,6 +33,7 @@ jQuery(function ($) {
 //thumbnails
 var images = [
   {
+<<<<<<< HEAD
     'src': "/image/xmas.jpeg",
     'top': 25,
     'left': 208,
@@ -77,7 +78,7 @@ loadThumbs();
 
 //message
 jQuery(function ($) {
-	$('#message').html('<textarea rows="2" cols="60"></textarea>');
+	$('#message').html('<textarea rows="2" cols="60" id="greeting"></textarea>');
 });
 
 
@@ -121,7 +122,7 @@ var updateTheme = function($image) {
 }
 
 var generateCard = function() {
-  	$('#bottom').html('<canvas id="canvas" height="' + $('#background').height() + '" width="' + $('#background').width() + '"></canvas>');
+  	$('#bottom').html('<canvas id="canvas" height="500px" width="500px"></canvas>');
   	
 	// Create temporary canvas where both video and theme will go in
   	var canvas = $('#canvas')[0];
@@ -129,25 +130,29 @@ var generateCard = function() {
 
 	// Get the snapshot image from video
   	var img = new Image();
-	img.onload = function(){
-  		context.drawImage(img, 0, 0);
-	};
 	img.src = currentThemeSrc;
+	console.log(img.src);
+	img.onload = function(){
+		console.log('load');
+  		context.drawImage(img, 0, 0);
 
-	context.drawImage(video, photoLeft, photoTop, photoHeight, photoHeight);
+		context.drawImage(video, photoLeft, photoTop, photoHeight, photoHeight);
+		context.fillText($('#greeting').val(), 25, 400);
+		
 
-	var cardData = canvas.toDataURL();
-	$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
-	$('#card').append('<button id="redo">Redo</button><button id="save">Save</button>');
-  	
-	// Add theme to the temp canvas
-	// Add photo to temp canvas
+		var cardData = canvas.toDataURL();
+		$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
+		$('#card').append('<button id="redo">Redo</button><button id="save">Save</button>');
+	  	
+		// Add theme to the temp canvas
+		// Add photo to temp canvas
 
-	// Capture temp canvas in data stream and add to new canvas
-	// Replace live preview with new image... hide video?
+		// Capture temp canvas in data stream and add to new canvas
+		// Replace live preview with new image... hide video?
 
-	$('#main').hide();
-	$('#card').show();
+		$('#main').hide();
+		$('#card').show();
+	};
 }
 
 var save = function() {
