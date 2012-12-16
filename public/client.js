@@ -32,11 +32,44 @@ jQuery(function ($) {
   
 //thumbnails
 var images = [
-"/image/xmas.jpeg","/image/xmas1.jpeg","/image/xmas2.jpeg","/image/xmas3.jpeg","/image/xmas4.jpeg"];
+  {
+    'src': "/image/xmas.jpeg",
+    'top': 100,
+    'left': 100,
+    'height': 100
+  },  {
+    'src': "/image/xmas1.jpeg",
+    'top': 100,
+    'left': 100,
+    'height': 100
+  },  {
+    'src': "/image/xmas2.jpeg",
+    'top': 100,
+    'left': 100,
+    'height': 100
+  },  {
+    'src': "/image/xmas3.jpeg",
+    'top': 100,
+    'left': 100,
+    'height': 100
+  },  {
+    'src': "/image/xmas4.jpeg",
+    'top': 100,
+    'left': 100,
+    'height': 100
+  }
+  ];
 
 function loadThumbs () {
-	for(var i = 0 ; i < images.length; i++){
-		$('#thumbnail').append('<img src="'+images[i]+'">');
+	for(var i = 0 ; i < images.length; i++) {
+		var img = $('<img />', {
+      'src': images[i].src,
+      'data-top': images[i].top,
+      'data-left': images[i].left,
+      'data-height': images[i].height
+    });
+
+    $('#thumbnail').append(img);
 	}
 }
 
