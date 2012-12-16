@@ -49,14 +49,14 @@ var images = [
     'height': 150
   },  {
     'src': "/image/xmas3.jpg",
-    'top': 40,
-    'left': 175,
-    'height': 100
+    'top': 0,
+    'left': 155,
+    'height': 140
   },  {
     'src': "/image/xmas4.jpg",
-    'top': 50,
-    'left': 125,
-    'height': 100
+    'top': 160,
+    'left': 225,
+    'height': 120
   }
   ];
 
