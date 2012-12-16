@@ -42,7 +42,10 @@ function loadThumbs () {
 
 loadThumbs();
 
-
+//message
+jQuery(function ($) {
+	$('#message').html('<textarea rows="2" cols="60"></textarea>');
+});
 
 
 
