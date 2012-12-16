@@ -118,7 +118,7 @@ var updateTheme = function($image) {
 
 	// reposition video of face
 	$(video).css({ left: photoLeft, top: photoTop, height: photoHeight });
-}
+};
 
 var generateCard = function() {
   	$('#bottom').html('<canvas id="canvas" height="500px" width="500px"></canvas>');
@@ -141,18 +141,12 @@ var generateCard = function() {
 
 		var cardData = canvas.toDataURL();
 		$('#card').html('<img id="card-data" src="' + cardData + '" width="' + $('#background').width() + '" height="' + $('#background').height() + '" />');
-		$('#card').append('<button id="redo">Redo</button><button id="save">Save</button>');
-	  	
-		// Add theme to the temp canvas
-		// Add photo to temp canvas
-
-		// Capture temp canvas in data stream and add to new canvas
-		// Replace live preview with new image... hide video?
+		$('#card').prepend('<div><button id="redo">Redo</button><button id="save">Save</button></div>');
 
 		$('#main').hide();
 		$('#card').show();
 	};
-}
+};
 
 var save = function() {
 	// upload
@@ -168,4 +162,4 @@ var save = function() {
 var redo = function() {
 	$('#card').hide().empty();
 	$('#main').show();
-}
+};
